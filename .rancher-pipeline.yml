@@ -1,11 +1,8 @@
 stages:
 - name: build
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: myway
-      pushRemote: true
-      registry: index.docker.io
+  - runScriptConfig:
+      image: java:8
+      shellScript: mvm
 timeout: 60
 notification: {}
